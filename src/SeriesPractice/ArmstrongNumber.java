@@ -1,0 +1,35 @@
+package SeriesPractice;
+
+import java.util.Scanner;
+
+public class ArmstrongNumber {
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+        System.out.print("Enter a number : ");
+        int n= sc.nextInt();
+        int temp=n;
+        int count=0;
+        while (temp>0){
+            temp=temp/10;
+            count++;
+        }
+        temp=n;
+        int sum=0;
+        while (temp>0){
+            int num=temp%10;
+            int power=1;
+            for (int i = 1; i <=count ; i++) {
+                power=power*num;
+
+            }
+            sum=sum+power;
+            temp=temp/10;
+
+        }
+        if (sum==n){
+            System.out.println("Yes it is Armstrong ");
+        }else {
+            System.out.println("Not armstrong");
+        }
+    }
+}
